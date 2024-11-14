@@ -20,7 +20,7 @@ body {
     height: 60px;
     align-items: center;
     z-index: 999;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(15px);
 }
 
 .logo {
@@ -68,5 +68,51 @@ body {
 .secondary_text {
     margin-bottom: 15px;
     line-height: 2;
-    font-size: 20px;
+    font-size: 15px;
 }
+
+.order {
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 2;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 90px;
+    background: rgb(45, 40, 40)
+}
+
+.order_img {
+    max-width: 120px;
+}
+
+
+  
+  .order:before, .order:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #00ff00,#ffff00, #00ff00);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .order:after {
+    filter: blur(50px);
+  }
